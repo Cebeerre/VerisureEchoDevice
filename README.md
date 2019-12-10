@@ -10,6 +10,10 @@ This has been configured to mimic Alarm modes into devices, so you can control:
 * Nigh mode
 * Perimeter
 
+No Skill is required as the WEMO support/discovery is already built-in the Echo devices. Once discovered and configured, you can easily turn on your alarm system with:
+
+```Alexa, turn on Verisure outside```
+
 # Installation/Usage 
 
 Modules required (install with pip)

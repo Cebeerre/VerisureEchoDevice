@@ -3,7 +3,12 @@ Turn your Verisure EU alarm into a Echo &amp; Alexa device
 
 THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES.
 
-This is basically a Flask App to use with fauxmo (https://pypi.org/project/fauxmo/) to emulate the Verisure EU alarm as a WEMO (Belkin) bulb/plug.
+This is basically a Flask App to use with fauxmo (https://pypi.org/project/fauxmo/) to emulate the Verisure EU alarm as a WEMO (Belkin) bulb/plug. 
+
+This has been configured to mimic Alarm modes into devices, so you can control:
+* Totally arm the system (except the perimeter)
+* Nigh mode
+* Perimeter
 
 # Installation/Usage 
 
@@ -34,7 +39,9 @@ If everything works, daemonize to your taste.
 
 Remember to edit the python file in order to use your username, installation number, region ...
 
-It's strongly recommended that the computer/device running fauxmo has a fixed IP address.
+# Caveats
+* It's strongly recommended that the computer/device running fauxmo has a fixed IP address.
+* Turning off any of the alarm modes, obviusly turns off everything. This is not a limitation from this script, Verisure has configured their backend to work in that way. You can easily guess that behaviour if you use the mobile app frequently. 
 
 Use the below as fauxmo config.json file. Edit the names to match your language/preference:
 

@@ -20,6 +20,18 @@ As Alexa expects a quick response from the device, querying the Verisure backend
 */5 * * * * /usr/bin/curl http://localhost:5000/api/v1.0/synclog
 ```
 
+To test the thing, run both this python script and fauxmo in different consoles and check the standard outputs
+
+```
+$ ./verisure.py 
+```
+
+```
+$ fauxmo -c config.json -vv
+```
+
+If everything works, daemonize to your taste.
+
 Remember to edit the python file in order to use your username, installation number, region ...
 
 It's strongly recommended that the computer/device running fauxmo has a fixed IP address.

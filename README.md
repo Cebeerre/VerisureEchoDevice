@@ -40,6 +40,7 @@ If everything works, daemonize to your taste.
 Remember to edit the python file in order to use your username, installation number, region ...
 
 # Caveats
+* **YOU SHOULD TRACK** the activity of all your keys and remotes as the status sync is based on the activity log, not actually querying the panel !! You can easily do this on the Webpage or the Mobile App.
 * It's strongly recommended that the computer/device running fauxmo has a fixed IP address.
 * Turning off any of the alarm modes, obviusly turns off everything. This is not a limitation from this script, Verisure has configured their backend to work in that way. You can easily guess that behaviour if you use the mobile app frequently. 
 

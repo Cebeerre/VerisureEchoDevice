@@ -177,7 +177,7 @@ def set_alarm_status(action):
     s.close()
 
 def return_alarm_status(action):
-    s = shelve.open('verisure_shelf', writeback=True)
+    s = shelve.open('verisure_shelf', flag='r')
     if action in s:
         status = {}
         status["status"] = s[action]

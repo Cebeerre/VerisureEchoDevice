@@ -8,27 +8,20 @@ import xmltodict
 from datetime import datetime
 import time
 import shelve
+import config
 from flask_executor import Executor
 
 # https://github.com/Cebeerre/VerisureEchoDevice
 # Flask App to use with fauxmo (https://pypi.org/project/fauxmo/) to emulate the Verisure EU alarm as a WEMO (Belkin) bulb/plug.
 # Cebeerre/VerisureEchoDevice is licensed under the MIT License
 
-############################################################
-# Adjust for each
-############################################################
-
-USER = 'username' # Username in the WebPage
-PWD = 'password' # Password in the WebPage
-NUMINST = '11111' # Installation Number (can be found in the WebPage)
-PANEL = 'SDVFAST' # All recent models are SDVFAST
-COUNTRY = 'ES' # ES, GB, FR, PT, IT
-LANG = 'es' # es, en, fr, pt, it
-SECONDS_BETWEEN_REQUESTS=1 # They detect flooding during interative actions, so be convervative.
-
-############################################################
-# Do not edit from here
-############################################################
+USER = config.USER
+PWD = config.PWD
+NUMINST = config.NUMINST
+PANEL = config.PANEL
+COUNTRY = config.COUNTRY
+LANG = config.LANG
+SECONDS_BETWEEN_REQUESTS = config.SECONDS_BETWEEN_REQUESTS
 LOGIN_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG }
 OP_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG, 'panel': PANEL, 'numinst': NUMINST}
 OUT_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG, 'numinst': '(null)'}

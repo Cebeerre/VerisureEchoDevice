@@ -177,8 +177,9 @@ def synclog():
         elif reg['@type'] in ALARM_MODES.values():
             s[reg['@type']] = reg['@type']
             dect = True
+    nd = dict(s)
     s.close()
-    return dict(s)
+    return nd
 
 @app.errorhandler(404)
 def not_found(error):

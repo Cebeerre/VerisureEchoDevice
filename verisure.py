@@ -9,6 +9,7 @@ from datetime import datetime
 import time
 import shelve
 import config
+import sys
 from flask_executor import Executor
 
 # https://github.com/Cebeerre/VerisureEchoDevice
@@ -26,6 +27,7 @@ LOGIN_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG }
 OP_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG, 'panel': PANEL, 'numinst': NUMINST}
 OUT_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG, 'numinst': '(null)'}
 ALARM_MODES = { 'armoutside': '40', 'armnight': '46', 'arm': '31'}
+shelve_file=sys.path[0]+'verisure_shelf'
 BASE_URL='https://mob2217.securitasdirect.es:12010/WebService/ws.do'
 requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += 'HIGH:!DH:!aNULL'
 app = Flask(__name__)
@@ -65,7 +67,7 @@ def operate_alarm(alarm_action):
     return output
 
 def set_alarm_status(action):
-    s = shelve.open('verisure_shelf', writeback=True)
+    s = shelve.open(shelve_file, writeback=True)
     if action == 'disarm':
         s[ALARM_MODES['armoutside']] = '0'
         s[ALARM_MODES['armnight']] = '0'
@@ -75,7 +77,7 @@ def set_alarm_status(action):
     s.close()
 
 def return_alarm_status(action):
-    s = shelve.open('verisure_shelf', flag='r')
+    s = shelve.open(shelve_file, flag='r')
     if action in s:
         status = {}
         status["status"] = s[action]
@@ -156,7 +158,7 @@ def arm_night():
     return jsonify(status)
 
 def synclog():
-    s = shelve.open('verisure_shelf', writeback=True)
+    s = shelve.open(shelve_file, writeback=True)
     hash = get_login_hash()
     id = generate_id()
     payload = OP_PAYLOAD

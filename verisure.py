@@ -58,8 +58,8 @@ def operate_alarm(alarm_action):
         else:
             abort(404)
     elif alarm_action == 'synclog':
-        synclog()
-        output = jsonify(success=True)
+        output = synclog()
+        #output = jsonify(success=True)
     else:
         abort(404)
     return output
@@ -178,6 +178,7 @@ def synclog():
             s[reg['@type']] = reg['@type']
             dect = True
     s.close()
+    return dict(s)
 
 @app.errorhandler(404)
 def not_found(error):

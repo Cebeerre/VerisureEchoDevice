@@ -174,7 +174,7 @@ def synclog():
                 s[ALARM_MODES['armnight']] = '0'
                 s[ALARM_MODES['arm']] = '0'
             break
-        elif reg['@type'] == alarm:
+        elif reg['@type'] in ALARM_MODES.values():
             s[reg['@type']] = reg['@type']
             dect = True
     s.close()

@@ -10,6 +10,7 @@ import time
 import shelve
 import config
 import sys
+import os
 from flask_executor import Executor
 
 # https://github.com/Cebeerre/VerisureEchoDevice
@@ -27,7 +28,7 @@ LOGIN_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG }
 OP_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG, 'panel': PANEL, 'numinst': NUMINST}
 OUT_PAYLOAD = { 'Country': COUNTRY, 'user':USER, 'pwd': PWD, 'lang': LANG, 'numinst': '(null)'}
 ALARM_MODES = { 'armoutside': '40', 'armnight': '46', 'arm': '31'}
-shelve_file=sys.path[0]+'verisure_shelf'
+shelve_file=os.path.dirname(os.path.realpath(sys.argv[0]))+'/verisure_shelf'
 BASE_URL='https://mob2217.securitasdirect.es:12010/WebService/ws.do'
 requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += 'HIGH:!DH:!aNULL'
 app = Flask(__name__)

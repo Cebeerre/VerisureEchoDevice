@@ -47,7 +47,7 @@ As Alexa expects a quick response from the device, querying the Verisure backend
 */5 * * * * /usr/bin/curl http://localhost:5000/api/v1.0/synclog
 ```
 
-To test the thing, run both this python script and fauxmo in different consoles and check the standard outputs
+To test the thing, run both this python script,fauxmo,redis and rq in different consoles and check the standard outputs
 
 ```
 $ ./verisure.py
@@ -55,6 +55,14 @@ $ ./verisure.py
 
 ```
 $ fauxmo -c config.json -vv
+```
+
+```
+$ redis-server
+```
+
+```
+$ rq worker
 ```
 
 If everything works, daemonize to your taste.

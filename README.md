@@ -1,5 +1,5 @@
 # VerisureEchoDevice
-Turn your Verisure EU alarm into a Echo &amp; Alexa device
+Turn your Verisure EU alarm into a Echo &amp; Alexa compatible device
 
 **_NOTE:_** THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES. The information here and online is for educational and resource purposes only and therefore I do not endorse or condone any inappropriate use of it.
 

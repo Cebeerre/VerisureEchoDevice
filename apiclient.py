@@ -79,7 +79,7 @@ def VerisureAPIClient(action,user,pwd,numinst,panel,country,lang,rate):
         logout(hash)
         return status
 
-    def armnigh():
+    def armnight():
         hash = get_login_hash()
         id = generate_id()
         status = op_verisure('ARMNIGHT', hash, id)
@@ -99,8 +99,8 @@ def VerisureAPIClient(action,user,pwd,numinst,panel,country,lang,rate):
         return arm()
     elif action == 'peri':
         return peri()
-    elif action == 'armnigh':
-        return armnigh()
+    elif action == 'armnight':
+        return armnight()
     elif action == 'darm':
         return darm()
     elif action == 'est':

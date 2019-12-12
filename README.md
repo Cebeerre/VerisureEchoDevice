@@ -22,6 +22,12 @@ Modules required (install with pip)
 * xmltodict
 * Shelve
 * Flask-Executor
+* rq
+
+Other stuff:
+* Redis
+
+Added RQ and Redis to support Alexa routines. The Verisure endpoint behaves quite weird if a routine asks for connecting the perimeter and the inside sensors at the same time.
 
 Rename the config-sample.py to config.py and edit the file properly:
 

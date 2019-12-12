@@ -7,8 +7,8 @@
             "DEVICES": [
                 {
                     "port": 12345,
-                    "on_cmd": "http://localhost:5000/api/v1.0/armoutside",
-                    "off_cmd": "http://localhost:5000/api/v1.0/disarm",
+                    "on_cmd": "http://localhost:5000/api/v1.0/peri",
+                    "off_cmd": "http://localhost:5000/api/v1.0/darm",
                     "state_cmd": "http://localhost:5000/api/v1.0/status?alarm=40",
                     "state_response_on": "\"status\":\"40\"",
                     "state_response_off": "\"status\":\"0\"",
@@ -18,7 +18,7 @@
                 {
                     "port": 12346,
                     "on_cmd": "http://localhost:5000/api/v1.0/armnight",
-                    "off_cmd": "http://localhost:5000/api/v1.0/disarm",
+                    "off_cmd": "http://localhost:5000/api/v1.0/darm",
                     "state_cmd": "http://localhost:5000/api/v1.0/status?alarm=46",
                     "state_response_on": "\"status\":\"46\"",
                     "state_response_off": "\"status\":\"0\"",
@@ -28,7 +28,7 @@
                 {
                     "port": 12347,
                     "on_cmd": "http://localhost:5000/api/v1.0/arm",
-                    "off_cmd": "http://localhost:5000/api/v1.0/disarm",
+                    "off_cmd": "http://localhost:5000/api/v1.0/darm",
                     "state_cmd": "http://localhost:5000/api/v1.0/status?alarm=31",
                     "state_response_on": "\"status\":\"31\"",
                     "state_response_off": "\"status\":\"0\"",

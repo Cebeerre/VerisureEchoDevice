@@ -5,6 +5,7 @@
 # Custom
 verisure_shelf.db
 config.py
+dump.rdb
 
 ### Linux ###
 *~

@@ -53,8 +53,10 @@ To test the thing, run both this python script,fauxmo,redis and rq in different 
 $ ./verisure.py
 ```
 
+Edit the ```config-fauxmo.json``` file to change the names of the devices to your preference.
+
 ```
-$ fauxmo -c config.json -vv
+$ fauxmo -c config-fauxmo.json -vv
 ```
 
 ```
@@ -73,49 +75,3 @@ Remember to edit the python file in order to use your username, installation num
 * **YOU SHOULD TRACK** the activity of all your keys and remotes as the status sync is based on the activity log, not actually querying the panel !! You can easily do this on the Webpage or the Mobile App.
 * It's strongly recommended that the computer/device running fauxmo has a fixed IP address.
 * Turning off any of the alarm modes, obviusly turns off everything. This is not a limitation from this script, Verisure has configured their backend to work in that way. You can easily guess that behaviour if you use the mobile app frequently.
-
-Use the below as fauxmo config.json file. Edit the names to match your language/preference:
-
-```
-{
-    "FAUXMO": {
-        "ip_address": "auto"
-    },
-    "PLUGINS": {
-        "SimpleHTTPPlugin": {
-            "DEVICES": [
-                {
-                    "port": 12345,
-                    "on_cmd": "http://localhost:5000/api/v1.0/armoutside",
-                    "off_cmd": "http://localhost:5000/api/v1.0/disarm",
-                    "state_cmd": "http://localhost:5000/api/v1.0/status?alarm=40",
-                    "state_response_on": "\"status\":\"40\"",
-                    "state_response_off": "\"status\":\"0\"",
-                    "method": "GET",
-                    "name": "Securitas Perimetral"
-                },
-                {
-                    "port": 12346,
-                    "on_cmd": "http://localhost:5000/api/v1.0/armnight",
-                    "off_cmd": "http://localhost:5000/api/v1.0/disarm",
-                    "state_cmd": "http://localhost:5000/api/v1.0/status?alarm=46",
-                    "state_response_on": "\"status\":\"46\"",
-                    "state_response_off": "\"status\":\"0\"",
-                    "method": "GET",
-                    "name": "Securitas Noche"
-                },
-                {
-                    "port": 12347,
-                    "on_cmd": "http://localhost:5000/api/v1.0/arm",
-                    "off_cmd": "http://localhost:5000/api/v1.0/disarm",
-                    "state_cmd": "http://localhost:5000/api/v1.0/status?alarm=31",
-                    "state_response_on": "\"status\":\"31\"",
-                    "state_response_off": "\"status\":\"0\"",
-                    "method": "GET",
-                    "name": "Securitas Interior"
-                }
-            ]
-        }
-    }
-}
-```

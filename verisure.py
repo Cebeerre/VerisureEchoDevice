@@ -18,8 +18,6 @@ from apiclient import VerisureAPIClient
 # https://github.com/Cebeerre/VerisureEchoDevice
 # Flask App to use with fauxmo (https://pypi.org/project/fauxmo/) to emulate the Verisure EU alarm as a WEMO (Belkin) bulb/plug.
 # Cebeerre/VerisureEchoDevice is licensed under the MIT License
-# https://pythonise.com/series/learning-flask/flask-rq-task-queue
-# https://github.com/rq/rq/issues/582
 
 ALARM_MODES = { 'peri': '40', 'armnight': '46', 'arm': '31'}
 shelve_file=os.path.dirname(os.path.realpath(sys.argv[0]))+'/verisure_shelf'

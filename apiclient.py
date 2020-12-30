@@ -8,7 +8,7 @@ def VerisureAPIClient(action,user,pwd,numinst,panel,country,lang,rate):
     BASE_URL='https://mob2217.securitasdirect.es:12010/WebService/ws.do'
     requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += 'HIGH:!DH:!aNULL'
     LOGIN_PAYLOAD = { 'Country': country, 'user':user, 'pwd': pwd, 'lang': lang }
-    OP_PAYLOAD = { 'Country': country, 'user':user, 'pwd': pwd, 'lang': lang, 'panel': panel, 'numinst': numinst}
+    OP_PAYLOAD = { 'Country': country, 'user':user, 'pwd': pwd, 'lang': lang, 'panel': panel, 'numinst': numinst, 'callby': 'AND_61'}
     OUT_PAYLOAD = { 'Country': country, 'user':user, 'pwd': pwd, 'lang': lang, 'numinst': '(null)'}
 
     def call_verisure_get(method, parameters):
@@ -36,7 +36,7 @@ def VerisureAPIClient(action,user,pwd,numinst,panel,country,lang,rate):
         return output
 
     def generate_id():
-        ID='IPH_________________________'+user+datetime.now().strftime("%Y%m%d%H%M%S")
+        ID='AND_________________________'+user+datetime.now().strftime("%Y%m%d%H%M%S")
         return ID
 
     def get_login_hash():
